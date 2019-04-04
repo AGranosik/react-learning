@@ -9,7 +9,9 @@ const songsReducer = () => {
     ];
 };
 
+// Reducer - store
 const selectedSongReducer = (selectedSong = null, action) => {
+    console.log(action);
     if(action.type === 'SONG_SELECTED'){
         return action.payload;
     }
@@ -17,6 +19,7 @@ const selectedSongReducer = (selectedSong = null, action) => {
     return selectedSong;
 };
 
+// properties of whole app - STATE
 export default combineReducers({
     songs: songsReducer,
     selectedSong: selectedSongReducer

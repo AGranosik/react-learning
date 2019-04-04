@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SongDetail = ({ song }) => {
+const SongDetail = (props) => {
+    console.log(props);
+    const song = props.song;
     if(!song){
         return <div>Select a song</div>;
     }
@@ -16,6 +18,7 @@ const SongDetail = ({ song }) => {
     );
 };
 
+// state - what reducer returns, in this case - songs
 const mapStateToProps = (state) => {
     return { song: state.selectedSong }
 };

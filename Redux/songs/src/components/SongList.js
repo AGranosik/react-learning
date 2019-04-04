@@ -4,8 +4,6 @@ import { selectSong } from '../actions';
 
 class SongList extends React.Component{
 
-    
-
     renderList(){
         return this.props.songs.map((song) => {
             return (
@@ -35,4 +33,6 @@ const mapStateToProps = (state) => {
     return {songs: state.songs};
 }
 
+// selected song - in this case is mapped to a prop field, and called
+// whenever button is clicked and invoke an action
 export default connect(mapStateToProps, { selectSong })(SongList);

@@ -7,9 +7,7 @@ export const fetchPosts = () => async (dispatch) => {
         dispatch({ type: 'FETCH_POSTS', payload: response.data });
     }
 
-export const getUser = (userId) => (dispatch, state) => {
-    _fetchUser(userId, dispatch);
-}
+export const getUser = (userId) => (dispatch, state) => _fetchUser(userId, dispatch);
 
 const _fetchUser =  _.memoize(async (userId, dispatch) => {
     const response = await jsonPlaceHolder.get(`/users/${userId}`);
